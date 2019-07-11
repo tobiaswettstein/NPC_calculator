@@ -84,7 +84,7 @@ TEMPLATES = [
     },
 ]
 
-# WSGI_APPLICATION = 'npc_calculator.wsgi.application'
+WSGI_APPLICATION = 'npc_calculator_django.wsgi.application'
 
 
 # Database
