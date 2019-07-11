@@ -1,0 +1,344 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+  crossorigin="anonymous">
+
+    
+<style>
+
+  .bottomleft {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    font-size: 14px;
+  }
+
+  .container-fluid {
+    width: 90%
+  }
+
+  .form-radio {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    position: relative;
+    background-color: rgba(250, 250, 250, 0.6);
+    color: rgba(156, 14, 14, .8);
+    top: 10px;
+    height: 30px;
+    width: 30px;
+    border: 0;
+    border-radius: 50px;
+    cursor: pointer;     
+    margin-right: 5px;
+    outline: none;
+  }
+
+  .form-radio:checked::before {
+    position: absolute;
+    font: 14px/1 'Open Sans', sans-serif;
+    left: 11px;
+    top: 7px;
+    content: '\02143';
+    transform: rotate(40deg);
+  }
+  .form-radio:hover {
+    background-color: #fac209;
+  }
+  .form-radio:checked{
+    background-color: #ca680d;
+  }
+  label{
+    font: 15px/1.7 'Open Sans', sans-serif;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: pointer;
+  } 
+
+  html { 
+  background: url("{% static 'images/calc_background2.jpg' %}") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  }
+
+
+  @media screen and (orientation: portrait) {
+  html {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: black;
+  }
+}
+
+
+  .list-group-item:last-child {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  body {
+    background: transparent;
+  }
+
+  .test_back {
+  background-color: #d36811;
+  }
+
+  .form-signin {
+  /* max-width: 550px; */
+  padding: 20px 0;
+  margin: 0 auto;
+  text-align: left;
+  }    
+
+  .box-style {
+    background-color: rgba(224, 142, 47, 0.8);
+    padding: 0 20px;
+
+  }
+
+  .box-style2 {
+    background-color: rgba(173, 57, 11, 0.8);
+    padding: 0 20px;
+  }
+
+  .box-style3 {
+    background: rgba(201, 200, 195, 0.68);
+  }
+
+  .fullscreen-bg {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: -100; 
+            }
+                                    
+  .fullscreen-bg__video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            }
+
+  .hide_this {
+            display: none;
+  }
+
+  @media screen and (max-width: 900px) {
+            html {
+              font-size: 8px
+            }
+            .bottomleft {
+              font-size: 8px
+            }
+            .form-radio {
+              height: 15px;
+              width: 15px;
+            }
+            .form-radio:checked::before {
+              left: 3px;
+              top: 0px;
+            }
+  }
+                            
+</style>
+
+
+<!-- <div id="video_back_0" class="fullscreen-bg">
+    <video muted poster="{% static 'images/background2.jpg' %}" class="fullscreen-bg__video" id="myVideo"> 
+      <source src="{% static 'videos/calc_background_vid109B.mp4' %}" type="video/mp4">
+    </video>
+  </div>    -->
+
+  <div id="video_back" class="fullscreen-bg hide_this"> <!-- style="background-color:rgb(15, 7, 0);" -->
+    <video autoplay muted poster="{% static 'images/calc_background2.jpg' %}" class="fullscreen-bg__video" id="myVideo"> <!--autoplay-->
+      <source src="{% static 'videos/calc_background_vid109B.mp4' %}" type="video/mp4">
+    </video>
+  </div>   
+
+
+
+
+  <!-- <script>
+      // Get the video
+      var video = document.getElementById("myVideo");
+      
+      // Get the button
+      var btn = document.getElementById("myBtn");
+      
+      // play the video
+      function play_function() 
+          {
+          video.play();
+          }
+  </script> -->
+
+
+</head>
+
+<body>
+
+  <!-- <video muted id="myVideo">
+    <source src="{% static 'videos/calc_background_vid109.mp4' %}" type="video/mp4">
+  </video> -->
+
+    <br>
+  <div class="container-fluid">
+      <br>
+    <div class="row d-flex justify-content-end">
+      
+      <div class="col-5 justify-content-left">
+
+          <img src="{% static 'images/logo_battlecalc.png' %}" class="img-fluid">
+
+          <div class="text-box">
+
+          </div>
+
+          <div class="bottomleft">
+              <strong>
+                Cartography by Dyson Logos<br>
+              </strong> 
+                <a href="https://dysonlogos.blog/" style="color:rgb(99, 17, 3)">https://dysonlogos.blog/</a><br>
+
+              <strong>
+                Created by Tobias Wettstein<br>
+              </strong> 
+                <a href="https://github.com/tobiaswettstein/NPC_calculator" style="color:rgb(99, 1, 3)">https://github.com/tobiaswettstein/NPC_calculator</a>
+                
+          </div>
+
+      </div>
+      
+      <div class="col-3">
+        <div class="box-style">
+            <h4 class="form-signin" style="color:black;"> Enter NPC Parties: </h4>
+            <form class="form-signin" method="post" action="/app/epic_battle/" id="post-form">
+              {% csrf_token %}
+        
+              <input name="d" class="form-control" type="number" min="1" step="1" max="10000" placeholder="Enter number of Heros" value="" required autofocus>
+              
+              <input type="radio" class="radio-item form-radio" name="hero" value="Dwarf" checked> <b>Dwarf</b><br>
+              <input type="radio" class="radio-item form-radio" name="hero" value="Elf"> <b>Elf</b><br>
+              <input type="radio" class="radio-item form-radio" name="hero" value="Human"> <b>Human</b><br>
+              <br>
+    
+              <input name="g" class="form-control" type="number" min="1" step="1" max="10000" placeholder="Enter number of Villains" value="" required autofocus>
+              <input type="radio" class="radio-item form-radio" name="villain" value="Goblin" checked> <b>Goblin</b><br>
+              <input type="radio" class="radio-item form-radio" name="villain" value="Orc"> <b>Orc</b><br>
+              <br>
+    
+              <h4 class="form-signin" style="color:black;"> Select battle ground: </h4>
+    
+              <input type="radio" class="radio-item form-radio" name="terrain" value="Mountain" checked> <b>Mountain</b><br>
+              <input type="radio" class="radio-item form-radio" name="terrain" value="Dungeon"> <b>Dungeon</b><br>
+              <input type="radio" class="radio-item form-radio" name="terrain" value="Fortress"> <b>Fortress</b><br>
+              <input type="radio" class="radio-item form-radio" name="terrain" value="Swamp"> <b>Swamp</b><br>
+              <input type="radio" class="radio-item form-radio" name="terrain" value="Forest"> <b>Forest</b><br>
+              <br>            
+              <br>
+              <button name="start_button" id="myBtn" class="btn btn-lg btn-warning btn-block" type="submit" onclick="">Start battle!!</button> 
+              <!--onclick="play_function()"-->
+              
+    <!-- <script>
+      let video_button = document.getElementById("myBtn");
+      var vid =  document.getElementById("video_back");
+
+      video_button.addEventListener('click', function(){
+        window.addEventListener('load', function(){
+            vid.classList.remove('hide_this');
+          })
+        }
+    // })
+    </script> -->
+
+
+              <!-- <button  name="start_button" id="myBtn" class="btn btn-lg btn-warning btn-block" type="submit">Start battle!! </button> -->
+              <br>
+
+
+              <!-- <script>
+                  document.getElementById("myBtn").addEventListener("click", function() {
+                    <video autoplay muted id="myVideo" class="fullscreen-bg__video" src="{% static 'videos/calc_background_vid109.mp4' %}" type="video/mp4"></video>
+                  });
+              </script> -->
+
+
+            </form>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="box-style2">
+            <ul class="list-group mb-1">
+                <left><h4 class="form-signin" style="color: black" >Battle Result: </h4></left>
+              
+              {% for e in fb %}
+              <li class="list-group-item list-group-item mb-4 box-style3">
+                  {{ e }}</li>
+              {% endfor %}
+
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div> 
+</div>
+
+<script>
+
+    if (sessionStorage.clickcount) {
+      sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+    }
+    else {
+      sessionStorage.clickcount = 1;
+    }
+    
+    if (sessionStorage.clickcount > 1) {
+      document.getElementById("video_back").classList.remove('hide_this');
+    }
+
+</script>
+
+<!-- <script src="static/scripts/main.js"></script> -->
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" 
+crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
+crossorigin="anonymous"></script>
+
+
+
+</body>
+
+
+
