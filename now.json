@@ -1,0 +1,14 @@
+
+{
+    "version": 2,
+    "name": "now-django-example",
+    "builds": [{
+        "src": "now_app/wsgi.py",
+        "use": "@ardnt/now-python-wsgi",
+        "config": { "maxLambdaSize": "15mb" }
+    }],
+    "routes": [{
+        "src": "/(.*)",
+        "dest": "now_app/wsgi.py"
+    }]
+}

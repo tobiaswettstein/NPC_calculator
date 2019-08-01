@@ -28,9 +28,10 @@ SECRET_KEY = '5nd)p6iz+c823p34$3%29e0(ggp5i&1i6ldokgqsj+c)$zdv&s'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["serene-bayou-42989.herokuapp.com"]
+# ALLOWED_HOSTS = ["serene-bayou-42989.herokuapp.com"]
+ALLOWED_HOSTS = ['.now.sh']
 
 
 
@@ -84,18 +85,19 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'npc_calculator_django.wsgi.application'
+WSGI_APPLICATION = 'npc_calculator.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+DATABASES = {}
 
 
 # Password validation

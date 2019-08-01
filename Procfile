@@ -1,1 +1,1 @@
-web: gunicorn npc_calculator_django.wsgi --log-file -
+web: gunicorn npc_calculator.wsgi --log-file -
