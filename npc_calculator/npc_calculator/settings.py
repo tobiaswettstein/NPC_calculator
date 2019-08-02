@@ -31,7 +31,7 @@ SECRET_KEY = '5nd)p6iz+c823p34$3%29e0(ggp5i&1i6ldokgqsj+c)$zdv&s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ["serene-bayou-42989.herokuapp.com"]
+ALLOWED_HOSTS = ["serene-bayou-42989.herokuapp.com"]
 
 
 
